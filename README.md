@@ -14,16 +14,19 @@ karin-plugin-MysTool目录执行以下命令克隆仓库到本地
 >根据你的网络选择使用GitHub或Gitee
 1. 使用GitHub
 ```bash
-git clone --depth=1 https://github.com/babanbang/Zenless.git ./components/Zenless
+git clone --depth=1 https://github.com/babanbang/Zenless.git ./lib/components/Zenless
 ```
 2. 使用Gitee
 ```bash
-git clone --depth=1 https://gitee.com/bbaban/Zenless.git ./components/Zenless
+git clone --depth=1 https://gitee.com/bbaban/Zenless.git ./lib/components/Zenless
 ```
 
 #### 如何使用
-在karin-plugin-MysTool/components/index.js中添加以下内容(无此文件可无视)
-```javascript
-export * from './Zenless/index.js'
+修改karin-plugin-MysTool/config/config/set.yaml
+> (若无此文件请先启动Karin或手动复制karin-plugin-MysTool/config/defSet/set.yaml)
+```yaml
+plugins:
+# 添加以下内容
+  - Zenless
 ```
 ---
