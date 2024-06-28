@@ -1,4 +1,4 @@
-import { ApiTool, MysTool } from "src/mys"
+import { ApiTool, MysTool } from "#MysTool/mys"
 
 ApiTool.setApiMap('zzz', function (data) {
   return {}
