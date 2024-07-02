@@ -7,11 +7,12 @@
   </a>
 </p>
 
+> [!TIP]
 > 请先确保你已经安装了[Karin](https://github.com/KarinJS/Karin)、[karin-plugin-MysTool](../../../karin-plugin-MysTool)
 
 #### 克隆仓库
 karin-plugin-MysTool目录执行以下命令克隆仓库到本地
->根据你的网络选择使用GitHub或Gitee
+>根据你的网络选择使用`GitHub`或`Gitee`
 1. 使用GitHub
 ```bash
 git clone --depth=1 https://github.com/babanbang/Zenless.git ./lib/components/Zenless
@@ -20,13 +21,3 @@ git clone --depth=1 https://github.com/babanbang/Zenless.git ./lib/components/Ze
 ```bash
 git clone --depth=1 https://gitee.com/bbaban/Zenless.git ./lib/components/Zenless
 ```
-
-#### 如何使用
-修改karin-plugin-MysTool/config/config/set.yaml
-> (若无此文件请先启动Karin或手动复制karin-plugin-MysTool/config/defSet/set.yaml)
-```yaml
-plugins:
-# 添加以下内容
-  - Zenless
-```
----
