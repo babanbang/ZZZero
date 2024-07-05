@@ -23,7 +23,7 @@
   <div class="head_box head_{{log.fiveAvg>75?'bad':log.fiveAvg>60?'normal':log.fiveAvg>0?'good':'no'}}">
     <span class="poolname">{{log.typeName}}池记录</span>
     <span class="uid">UID: <strong>{{uid}}</strong></span>
-    <span class="tips">已<strong>{{log.noFiveNum}}</strong>抽未出金，<strong>{{log.noFourNum}}</strong>抽未出紫</span>
+    <span class="tips">已<strong>{{log.noFiveNum}}</strong>抽未出S，<strong>{{log.noFourNum}}</strong>抽未出A</span>
     {{each log.line val}}
     <div class="data_line">
       {{each val item}}

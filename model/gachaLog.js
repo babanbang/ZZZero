@@ -310,7 +310,7 @@ export default class Role extends Base {
         fiveLogNum = 0
         let isUp = false
         // 歪了多少个
-        if (val.item_type != "角色" && val.item_type != "邦布") {
+        if (val.item_type != "角色") {
           weaponNum++
         }
 
