@@ -25,7 +25,13 @@ export default class DailyNote extends Base {
     this.e.reply('正在查询中，请稍等...', { at: true })
 
     const _reply = this.e.reply
-    this.e.reply = (msg) => sendMsg.push(msg)
+    this.e.reply = (msg) => {
+      if (Array.isArray(msg)) {
+        sendMsg.push(...msg)
+      } else {
+        sendMsg.push(msg)
+      }
+    }
 
     sendMsg.push(...await this.getNoteImgs(this.e.user_id))
 
@@ -48,6 +54,8 @@ export default class DailyNote extends Base {
     const mysInfo = new MysInfo(this.e, this.game)
 
     const uids = user.getUidList(this.game, { type: 'all' })
+    if (!uids.length) return ['请先绑定cookie或stoken']
+
     for (const uid of uids) {
       const mys = user.getUidData({ game: this.game, uid })
       mysInfo.setMysApi(mys)
@@ -64,11 +72,13 @@ export default class DailyNote extends Base {
         const noteData = await mysInfo.getData('dailyNote')
         if (noteData?.retcode == 0) {
           ImgList.push(await this.renderImg({ uid, ...this.dealData(noteData.data) }))
+        } else {
+          ImgList.push(`UID:${uid} 查询失败`)
         }
         continue
       }
 
-      ImgList.push('请先绑定cookie')
+      ImgList.push(`UID:${uid} 请先绑定cookie或stoken`)
     }
 
     return ImgList
