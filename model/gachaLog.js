@@ -220,7 +220,7 @@ export default class Role extends Base {
     /** 获取到uid后重新查询本地记录 */
     let List = ''
     if (!this.uid && ids.size === 0) {
-      ({ List, ids } = this.readJson(this.type, res.data.list[0].uid))
+      ({ list: List, ids } = this.readJson(this.type, res.data.list[0].uid))
     }
 
     let data = []
