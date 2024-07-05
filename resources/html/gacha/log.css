@@ -1,0 +1,348 @@
+body {
+  position: absolute;
+}
+
+.container {
+  padding: 5px 15px 25px 15px;
+  background-color: #f5f6fb;
+  height: 100%;
+  width: 100%;
+  float: left;
+}
+
+.logo {
+  width: 100%;
+}
+
+.card_list .item {
+  margin: 0px 10px 10px 10px;
+  background: none;
+}
+
+.card_list .item.isNull {
+  margin: 0px 10px 10px 10px;
+  border-radius: 7px;
+  height: 90px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background: none !important;
+}
+
+.head_box {
+  font-family: "tttgbnumber";
+  position: relative;
+  height: 110px;
+  color: black;
+}
+
+.head_box::before {
+  content: "";
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.799);
+  width: 110px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px 10px 30px 10px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.277);
+}
+
+.head_box.head_good::before {
+  background-color: rgba(238, 59, 59, 0.8);
+  content: "欧";
+}
+
+.head_box.head_normal::before {
+  background: rgb(113, 69, 184);
+  content: "平";
+}
+
+.head_box.head_bad::before {
+  background: rgb(102, 231, 212);
+  content: "非";
+}
+
+.head_box strong {
+  color: #eb8d57;
+}
+
+.head_box .poolname {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+}
+
+.head_box .uid {
+  font-size: 14px;
+  font-weight: bold;
+  position: absolute;
+  left: 120px;
+  top: -15px;
+}
+
+.head_box .tips {
+  position: absolute;
+  right: 5px;
+  top: -15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000a8;
+}
+
+.logo {
+  font-size: 12px;
+  font-family: "tttgbnumber";
+  text-align: center;
+  color: #7994a7;
+  position: relative;
+  padding-left: 10px;
+}
+
+.data_box {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 480px;
+  margin: 15px 15px 0 15px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 20px 0px 5px 10px;
+  background: #fff;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.data_line {
+  width: 350px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  padding-top: 6px;
+  margin-left: 110px;
+}
+
+.data_line_item {
+  width: 100px;
+  text-align: center;
+}
+
+.num {
+  font-family: tttgbnumber;
+  font-size: 24px;
+}
+
+.num .unit {
+  font-size: 12px;
+}
+
+.data_box .lable {
+  font-size: 14px;
+  color: #7f858a;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.info_box_border {
+  border-radius: 15px;
+  margin-bottom: 20px;
+  padding: 6px 0px 5px 10px;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.card_list {
+  width: 100%;
+  overflow: hidden;
+}
+
+.card_list>* {
+  border-radius: 7px;
+}
+
+.card_list .role_box {
+  margin: 0px 8px 10px 0px;
+  -webkit-box-shadow: 0 2px 6px 0 rgba(132, 93, 90, 0.3);
+  box-shadow: 0 2px 6px 0 rgba(132, 93, 90, 0.3);
+  height: 88px;
+  width: 70px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.role_box .role_img {
+  width: 70px;
+  height: 70px;
+  display: inline-block;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 7px 7px 0 0;
+}
+
+.card_list .role_box .num {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.5);
+  font-family: "tttgbnumber";
+}
+
+.card_list .role_box .name,
+.card_list .role_box .num_name {
+  position: absolute;
+  top: 70.4px;
+  left: 0px;
+  z-index: 9;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  height: 18px;
+  line-height: 18px;
+}
+
+.card_list .role_box .num_name {
+  font-family: "tttgbnumber";
+  font-size: 13px;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  /* border-radius: 0 0 7px 7px; */
+  overflow: hidden;
+}
+
+.card_list .role_box .num_name div:first-child {
+  border-radius: 0 0 0 7px;
+}
+
+.card_list .role_box .num_name div:last-child {
+  border-radius: 0 0 7px 0;
+}
+
+.card_list .role_box .num_name div:only-child {
+  border-radius: 0 0 7px 7px;
+}
+
+.card_list .item-icon .num_name>* {
+  height: 18px;
+}
+
+.base_info {
+  position: relative;
+  padding-left: 10px;
+  margin: 5px 10px;
+}
+
+.label {
+  color: #555;
+  border-radius: 10px;
+  font-size: 12px;
+  padding: 2px 7px;
+  vertical-align: 2px;
+}
+
+.line_box {
+  height: 40px;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 15px;
+  font-family: "HYWenHei-55W";
+  color: #7d7d7d;
+  padding-bottom: 5px;
+}
+
+.line_box .line {
+  height: 2px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  background-color: #ebebeb;
+  margin: 0px 10px;
+}
+
+.minimum {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 9;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-family: "tttgbnumber";
+}
+
+.hasMore {
+  font-size: 12px;
+  margin: 6px 0;
+  color: #7f858a;
+}
+
+.gold {
+  background: #ffeb73;
+  color: #6f4b00;
+}
+
+.good {
+  background: #168b2c;
+  color: #fff;
+}
+
+.normal {
+  background: #6939b7;
+  color: #fff;
+}
+
+.bad {
+  background: #9d3333;
+  color: #fff;
+}

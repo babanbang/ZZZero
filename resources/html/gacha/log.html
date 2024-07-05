@@ -1,0 +1,75 @@
+{{extend defaultLayout}}
+
+{{block 'css'}}
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/gacha/log.css" />
+{{if gachaData.length>1}}
+<style>
+  body {
+    width: 1080px;
+  }
+</style>
+{{else}}
+<style>
+  body {
+    width: 540px;
+  }
+</style>
+{{/if}}
+{{/block}}
+
+{{block 'main'}}
+{{each gachaData log}}
+<div class="data_box">
+  <div class="head_box head_{{log.fiveAvg>75?'bad':log.fiveAvg>60?'normal':'good'}}">
+    <span class="poolname">{{log.typeName}}池记录</span>
+    <span class="uid">UID: <strong>{{uid}}</strong></span>
+    <span class="tips">已<strong>{{log.noFiveNum}}</strong>抽未出金，<strong>{{log.noFourNum}}</strong>抽未出紫</span>
+    {{each log.line val}}
+    <div class="data_line">
+      {{each val item}}
+      <div class="data_line_item" style="width: {{350/val.length}}px;">
+        <div class="num">
+          {{@ item.num}}
+          <span class="unit">{{item.unit}}</span>
+        </div>
+        <div class="lable">{{@ item.lable}}</div>
+      </div>
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+
+  <div class="line_box">
+    <span class="line"></span>
+    <span class="text">五星历史 {{log.firstTime}} ~ {{log.lastTime}}</span>
+    <span class="line"></span>
+  </div>
+  <div class="card_list">
+    {{each log.fiveLog val}}
+    <div class="{{val.isNull?'isNull':''}} role_box">
+      {{ if val.isUp }}
+      <span class="minimum">UP</span>
+      {{/if}}
+      {{ if val.isNull }}
+      <div class="role"></div>
+      <div class="num_name">
+        {{each val.nums num}}
+        <div>{{num}}</div>
+        {{/each}}
+      </div>
+      {{else}}
+      <img class="role_img item-icon star5" src="{{pluResPath}}{{val.icon}}"></span>
+      <div class="num_name">
+        {{each val.nums num}}
+        <div class="{{num<=10?'gold': (num<log.max*0.5 ? 'good' : (num<log.max*0.83) ? 'normal' : 'bad' )}}"
+          style="width: {{100/val.nums.length}}%;">
+          {{num}}</div>
+        {{/each}}
+      </div>
+      {{/if}}
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{/each}}
+{{/block}}

@@ -21,3 +21,10 @@ git clone --depth=1 https://github.com/babanbang/ZZZero.git ./lib/components/ZZZ
 ```bash
 git clone --depth=1 https://gitee.com/bbaban/ZZZero.git ./lib/components/ZZZero
 ```
+
+---
+
+#### 已完成功能
+
+- [x] 前瞻兑换码
+- [x] 电量查询
