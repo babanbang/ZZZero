@@ -1,1 +1,162 @@
-{}
+{
+  "1011": {
+    "id": 1011,
+    "key": "Anby",
+    "name": "安比·德玛拉",
+    "star": 4,
+    "elem": "电",
+    "weapon": "击破",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1021": {
+    "id": 1021,
+    "key": "Nekomata",
+    "name": "猫宫 又奈",
+    "star": 5,
+    "elem": "物理",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1031": {
+    "id": 1031,
+    "key": "Nicole",
+    "name": "妮可·德玛拉",
+    "star": 4,
+    "elem": "以太",
+    "weapon": "支援",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1041": {
+    "id": 1041,
+    "key": "Soldier11",
+    "name": "「11号」",
+    "star": 5,
+    "elem": "火",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1061": {
+    "id": 1061,
+    "key": "Corin",
+    "name": "可琳·威克斯",
+    "star": 4,
+    "elem": "物理",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1081": {
+    "id": 1081,
+    "key": "Billy",
+    "name": "比利·奇德",
+    "star": 4,
+    "elem": "物理",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1101": {
+    "id": 1101,
+    "key": "Koleda",
+    "name": "珂蕾妲·贝洛伯格",
+    "star": 5,
+    "elem": "火",
+    "weapon": "击破",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1111": {
+    "id": 1111,
+    "key": "Anton",
+    "name": "安东·伊万诺夫",
+    "star": 4,
+    "elem": "电",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1121": {
+    "id": 1121,
+    "key": "Ben",
+    "name": "本·比格",
+    "star": 4,
+    "elem": "火",
+    "weapon": "防护",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1131": {
+    "id": 1131,
+    "key": "Soukaku",
+    "name": "苍角",
+    "star": 4,
+    "elem": "冰",
+    "weapon": "支援",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1141": {
+    "id": 1141,
+    "key": "Lycaon",
+    "name": "冯·莱卡恩",
+    "star": 5,
+    "elem": "冰",
+    "weapon": "击破",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1151": {
+    "id": 1151,
+    "key": "Lucy",
+    "name": "露西亚娜·德·蒙特夫",
+    "star": 4,
+    "elem": "火",
+    "weapon": "支援",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1181": {
+    "id": 1181,
+    "key": "Grace",
+    "name": "格莉斯·霍华德",
+    "star": 5,
+    "elem": "电",
+    "weapon": "异常",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1191": {
+    "id": 1191,
+    "key": "Ellen",
+    "name": "艾莲·乔",
+    "star": 5,
+    "elem": "冰",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1211": {
+    "id": 1211,
+    "key": "Rina",
+    "name": "亚历山德丽娜·莎芭丝缇安",
+    "star": 5,
+    "elem": "火",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1281": {
+    "id": 1281,
+    "key": "Piper Wheel",
+    "name": "派派·韦尔",
+    "star": 4,
+    "elem": "物理",
+    "weapon": "异常",
+    "talentId": {},
+    "talentCons": {}
+  }
+}

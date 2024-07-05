@@ -28,3 +28,4 @@ git clone --depth=1 https://gitee.com/bbaban/ZZZero.git ./lib/components/ZZZero
 
 - [x] 前瞻兑换码
 - [x] 电量查询
+- [x] 祈愿记录更新、查询(仅支持使用链接更新)

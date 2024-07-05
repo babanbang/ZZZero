@@ -1,5 +1,5 @@
 import { MysInfo } from '#MysTool/mys'
-import { Character, Weapon } from '#MysTool/profile'
+import { Character, Weapon, Bangboo } from '#MysTool/profile'
 import { Base, Cfg, Data, PluginName } from '#MysTool/utils'
 import { common } from 'node-karin'
 import lodash from 'lodash'
@@ -29,12 +29,15 @@ export default class Role extends Base {
   }
 
   getIcon (name, type = "role") {
-    if (type === "role" || type === "角色") {
+    if (type === "role" || type === "代理人") {
       let char = Character.get(name, this.game)
-      return char?.imgs?.face || ""
-    } else if (type === "weapon" || type === "光锥") {
+      return char?.face || ""
+    } else if (type === "weapon" || type === "音擎") {
       let weapon = Weapon.get(name, this.game)
-      return weapon?.imgs?.icon || ""
+      return weapon?.icon || ""
+    } else if (type === "邦布") {
+      let bangboo = Bangboo.get(name, this.game)
+      return bangboo?.icon || ""
     }
     return ""
   }
@@ -272,7 +275,7 @@ export default class Role extends Base {
     let bigNum = 0
 
     for (const val of gacha) {
-      if (val.rank_type == 4) {
+      if (val.rank_type == 3) {
         fourNum++
         if (noFourNum == 0) {
           noFourNum = fourLogNum
@@ -289,7 +292,7 @@ export default class Role extends Base {
       }
       fourLogNum++
 
-      if (val.rank_type == 5) {
+      if (val.rank_type == 4) {
         fiveNum++
         if (fiveLog.length > 0) {
           if (fiveLog[fiveLog.length - 1].nums === 4) {
@@ -307,7 +310,7 @@ export default class Role extends Base {
         fiveLogNum = 0
         let isUp = false
         // 歪了多少个
-        if (val.item_type != "角色") {
+        if (val.item_type != "角色" && val.item_type != "邦布") {
           weaponNum++
         }
 
@@ -415,7 +418,7 @@ export default class Role extends Base {
 
     let line = []
     // 常驻池
-    if ([1, 2].includes(Number(type))) {
+    if ([1001, 5001].includes(Number(type))) {
       line = [[
         { lable: "S级平均", num: fiveAvg, unit: "抽" },
         { lable: "A级平均", num: fourAvg, unit: "抽" },
@@ -423,7 +426,7 @@ export default class Role extends Base {
       ], [
         { lable: "最非", num: maxValue, unit: "抽" },
         { lable: "最欧", num: minValue, unit: "抽" },
-        { lable: `S级音擎`, num: weaponNum, unit: "个" },
+        { lable: `S级${Number(type) === 1001 ? '音擎' : '邦布'}`, num: weaponNum, unit: "个" },
         { lable: "<strong>S级</strong>/A级", num: `<strong>${fiveNum}</strong>/${fiveNum}`, unit: "" },
       ]]
     } else {
@@ -472,24 +475,23 @@ export default class Role extends Base {
     if (/全部/g.test(msg)) return pool
 
     const types = msg.match(/up|抽卡|角色|抽奖|常驻|武器|音擎|邦布/g) || ['角色']
-
     const pools = types.map(type => {
       switch (type) {
         case "up":
         case "抽卡":
         case "角色":
         case "抽奖":
-          return { type: 11, typeName: "角色" }
+          return { type: 2001, typeName: "角色" }
         case "常驻":
-          return { type: 1, typeName: "常驻" }
+          return { type: 1001, typeName: "常驻" }
         case "音擎":
         case "武器":
-          return { type: 12, typeName: "音擎" }
+          return { type: 2002, typeName: "音擎" }
         case "邦布":
-          return { type: 12, typeName: "邦布" }
+          return { type: 5001, typeName: "邦布" }
       }
 
-      return { type: 11, typeName: "角色" }
+      return { type: 2001, typeName: "角色" }
     })
 
     const orderPool = lodash.keyBy(pool, 'type')

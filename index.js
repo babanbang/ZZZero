@@ -15,6 +15,6 @@ for (const path of ['LedgerData', 'GachaData', 'PlayerData']) {
 }
 
 /** 初始化资源 */
-for (const type of ['artifact', 'character', 'weapon']) {
+for (const type of ['bangboo', 'character', 'weapon']) {
   await import(`file://${dir.path}/resources/meta/${type}/index.js`)
 }

@@ -86,7 +86,7 @@ body {
 
 
 .energy .status {
-  background-color: #2d2b279c;
+  background-color: rgba(45, 43, 39, 0.612);
   position: absolute;
   border-radius: 30px;
   width: 250px;
@@ -141,7 +141,7 @@ body {
   margin: 0 10px;
   text-align: center;
   border-radius: 30px;
-  background: #a9834f;
+  background: rgb(169, 131, 79);
   color: #EEE5D7;
 }
 
@@ -215,5 +215,6 @@ body {
   position: absolute;
   z-index: 2;
   right: 10px;
+  top: 18px;
   color: rgb(229, 230, 231);
 }
