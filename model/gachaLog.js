@@ -134,7 +134,7 @@ export default class Role extends Base {
         msgs.push(`[${this.typeName}]记录获取成功，更新${num}条`)
       }
     }
-    msgs.push(`\n抽卡记录更新完成，您还可回复\n【#zzz全部记录】统计全部抽卡数据\n【#zzz武器记录】统计武器池数据\n【#zzz角色统计】按卡池统计数据\n【#zzz导出记录】导出记录数据`)
+    msgs.push(`\n抽卡记录更新完成，您还可回复\n【#zzz全部记录】统计全部抽卡数据\n【#zzz角色记录】统计角色池数据\n【#zzz武器记录】统计武器池数据\n【#zzz邦布记录】统计邦布池数据\n【#zzz常驻记录】统计常驻池数据`)
 
     if (!this.uid) {
       this.e.reply('抽卡记录暂无数据，请等待有数据后再尝试更新！')
