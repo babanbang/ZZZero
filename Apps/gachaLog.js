@@ -13,6 +13,17 @@ export const GachaLog_getLog = karin.command(
   { name: '绝区零抽卡记录查询', priority: 200 }
 )
 
+export const GachaLog_upLogBysk = karin.command(
+  new RegExp(`^${reg}(更新|刷新)抽卡(记录|祈愿|分析)$`, 'i'),
+  async (e) => {
+    const msg = await new GachaLog(e).upLogBysk()
+    if (msg) e.bot.sendForwardMessage(e.contact, msg)
+    return true
+  },
+  { name: '更新绝区零抽卡记录', priority: 200 }
+)
+
+
 // export const GachaLog_exportLog = karin.command(
 //   new RegExp(`^${reg}(强制)?导出抽卡(记录|祈愿|分析)$`, 'i'),
 //   async (e) => {

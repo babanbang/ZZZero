@@ -1,4 +1,4 @@
-import { MysInfo } from '#MysTool/mys'
+import { MysInfo, MysUtil } from '#MysTool/mys'
 import { Character, Weapon, Bangboo } from '#MysTool/profile'
 import { Base, Cfg, Data, PluginName } from '#MysTool/utils'
 import { common } from 'node-karin'
@@ -81,6 +81,32 @@ export default class Role extends Base {
     }
 
     return await this.renderImg({ uid: this.uid, gachaData })
+  }
+
+  async upLogBysk () {
+    this.mysInfo = await MysInfo.init({ e: this.e, game: this.game, UidType: 'sk' })
+    if (!this.mysInfo?.ckInfo?.sk) {
+      return false
+    }
+
+    const authkeyrow = await this.mysInfo.getData('authKey', {
+      auth_appid: 'webview_gacha',
+      cacheCd: 3600,
+      option: { nolog: true }
+    }, false)
+
+    if (!authkeyrow?.data?.authkey) {
+      this.e.reply(`uid:${this.mysInfo.uid},authkey获取失败：` + (authkeyrow?.message?.includes?.("登录失效") ? "请重新绑定stoken" : authkeyrow?.message))
+      return false
+    }
+
+    this.e.reply(`正在更新UID:${this.mysInfo.uid}的抽卡记录，请稍后...`)
+
+    return await this.upLog({
+      uid: this.mysInfo.uid,
+      authkey: encodeURIComponent(authkeyrow.data.authkey),
+      region: MysUtil.getRegion(this.mysInfo.uid, this.game)
+    })
   }
 
   async upLog (params) {
