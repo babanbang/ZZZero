@@ -8,7 +8,7 @@ import { PoolDetail } from '../resources/gachaPool/pool.js'
 
 const pool = [
   { type: 2001, typeName: "角色" },
-  { type: 2002, typeName: "音擎" },
+  { type: 3001, typeName: "音擎" },
   { type: 1001, typeName: "常驻" },
   { type: 5001, typeName: "邦布" }
 ]
@@ -512,7 +512,7 @@ export default class Role extends Base {
           return { type: 1001, typeName: "常驻" }
         case "音擎":
         case "武器":
-          return { type: 2002, typeName: "音擎" }
+          return { type: 3001, typeName: "音擎" }
         case "邦布":
           return { type: 5001, typeName: "邦布" }
       }
