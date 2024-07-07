@@ -1,6 +1,5 @@
 body {
   width: 700px;
-  padding-bottom: 20px;
 }
 
 .container {
@@ -132,6 +131,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.275);
   border-radius: 5px;
@@ -210,7 +213,13 @@ body {
   left: 15px;
   z-index: 102;
   font-size: 6px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -250,6 +259,9 @@ body {
 }
 
 .avatar-ranks {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   position: absolute;
   bottom: 6px;
@@ -370,6 +382,9 @@ body {
 }
 
 .weapon-stars {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: absolute;
@@ -444,8 +459,17 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 

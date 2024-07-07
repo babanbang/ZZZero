@@ -17,18 +17,15 @@
 }
 
 body {
-  width: 400px;
+  width: 300px;
   font-size: 14px;
   color: #fff;
   font-family: PingFangSC-Medium, PingFang SC, sans-serif;
-  -webkit-transform: scale(2.0);
-  transform: scale(2.0);
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
 }
 
 .container {
   font-family: "tttgbnumber";
+  position: relative;
 }
 
 .logo {
@@ -62,6 +59,7 @@ body {
   flex-direction: column;
   height: auto;
   background-size: cover;
+  font-size: 10px;
 }
 
 .role-image {
@@ -83,7 +81,7 @@ body {
 }
 
 .role-text span {
-  font-size: 10px;
+  font-size: 8px;
   background-color: rgb(234, 182, 26);
   padding: 3px;
   border-radius: 3px;
@@ -91,7 +89,7 @@ body {
 }
 
 .role-text span1 {
-  font-size: 10px;
+  font-size: 8px;
   background-color: rgb(26, 182, 234);
   padding: 3px;
   border-radius: 3px;
@@ -99,7 +97,7 @@ body {
 }
 
 .explore-box {
-  width: 380px;
+  width: 280px;
   height: auto;
   background-color: rgba(23, 23, 20, 0.9);
   border-radius: 10px;
@@ -121,7 +119,7 @@ body {
 }
 
 .explore {
-  width: 380px;
+  width: 280px;
 }
 
 .explore .item1 {
@@ -188,7 +186,7 @@ body {
   float: left;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  width: 70px;
+  width: 64px;
   height: 40px;
   background-color: rgba(38, 38, 34, 0.9);
   border-radius: 4px;
