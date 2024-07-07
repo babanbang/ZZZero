@@ -69,7 +69,7 @@
           {{set equips = avatar.equip}}
 
           {{each list idx}}
-          {{ if !equips[idx]}}
+          {{ if !equips[idx-1]}}
           <div class="equip equip-type{{idx}} weapon-no"></div>
           {{else}}
           {{set equip = equips[idx-1]}}
