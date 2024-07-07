@@ -1,0 +1,88 @@
+{{extend defaultLayout}}
+
+{{block 'css'}}
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/role/rolelist.css" />
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/element.css" />
+{{/block}}
+
+{{block 'main'}}
+<div class="role" style="background-image: url('{{pluResPath}}imgs/other/index-bg.png');">
+  <div class="logo"></div>
+  <div class="top">
+    <div class="role-image"
+      style="background-image: url('{{role.face||`${pluResPath}imgs/other/default-avatar.png`}}')"></div>
+    <div class="role-text">
+      <p>{{role.name}}
+        <span>Lv.{{role.level}}</span>
+        <span1>{{role.world_level}}</span1>
+      </p>
+      <p>{{role.region}} | UID: {{uid}}</p>
+    </div>
+  </div>
+  <div class="line-avatars"></div>
+  <div class="avatars">
+    {{each avatars avatar}}
+    <div class="avatar-box">
+      <div class="avatar-info rarity{{avatar.rarity}}">
+        <div class="avatar-image" style="background-image: url('{{pluResPath}}{{avatar.vertical}}')"></div>
+        <div class="avatar-rarity img{{avatar.rarity}}"></div>
+        <div class="avatar-name">
+          {{avatar.name||avatar.full_name_mi18n}}
+          <div class="avatar-level">Lv.{{avatar.level}}</div>
+        </div>
+        <div class="avatar-element {{avatar.element}}"></div>
+        <div class="avatar-profession {{avatar.weaponType}}"></div>
+        <img class="avatar-group" src="{{avatar.group_icon_path}}">
+        <div class="avatar-ranks">
+          {{each avatar.ranks rank}}
+          <div class="avatar-rank {{rank.is_unlocked?'unlocked':''}}">{{rank.id}}</div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="weapon-info">
+        <div class="skills">
+          {{each avatar.skills skill}}
+          <div class="skill type{{skill.skill_type}}">
+            <div class="skill-level">{{skill.level}}</div>
+          </div>
+          {{/each}}
+        </div>
+        <div class="weapon-main">
+          {{if avatar.weapon?.rarity}}
+          {{set stars = [1,2,3,4,5]}}
+          <div class="weapon" style="background-image: url('{{avatar.weapon.icon}}')">
+            <div class="weapon-stars">
+              {{each stars star}}
+              <div class="weapon-star{{avatar.weapon.star>=star?'-full':''}}"></div>
+              {{/each}}
+            </div>
+            <div class="weapon-star{{avatar.weapon.star}}"></div>
+            <div class="weapon-level weapon{{avatar.weapon.rarity}}">
+              <span>Lv.{{avatar.weapon.level}}</span>
+            </div>
+          </div>
+          {{else}}
+          <div class="weapon weapon-no"></div>
+          {{/if}}
+
+          {{set list = [1,2,3,4,5,6]}}
+          {{set equips = avatar.equip}}
+
+          {{each list idx}}
+          {{ if !equips[idx]}}
+          <div class="equip equip-type{{idx}} weapon-no"></div>
+          {{else}}
+          {{set equip = equips[idx-1]}}
+          <div class="equip equip-type{{equip.equipment_type}} equip-rarity{{equip.rarity}}">
+            <img src="{{equip.icon}}">
+            <div class="equip-level">Lv.{{equip.level}}</div>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{/block}}

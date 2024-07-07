@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="shortcut icon" href="#" />
+  <link rel="stylesheet" type="text/css" href="{{pluResPath}}html/explore/explore.css" />
+  <link rel="stylesheet" type="text/css" href="{{pluResPath}}html/element.css" />
+  <link rel="preload" href="{{fontsPath}}tttgbnumber.ttf" as="font">
+</head>
+
+<body>
+  <div class="container">
+    <div class="role" style="background-image: url('{{pluResPath}}imgs/other/index-bg.png');">
+      <div class="logo"></div>
+      <div class="top">
+        <div class="role-image"
+          style="background-image: url('{{role.face||`${pluResPath}imgs/other/default-avatar.png`}}')">
+        </div>
+        <div class="role-text">
+          <p>{{role.name}}
+            <span>Lv.{{role.level}}</span>
+            <span1>{{role.world_level}}</span1>
+          </p>
+          <p>{{role.region}} | UID: {{uid}}</p>
+        </div>
+      </div>
+      <div class="explore-box">
+        <!-- <div class="explore">
+          {{each explores.line v}}
+          <div class="item1">
+            <p>{{v.num}}{{if v.extra}}<span>/{{v.extra}}</span>{{/if}}</p>
+            <p>{{v.lable}}</p>
+          </div>
+          {{/each}}
+        </div> -->
+        <div class="explore">
+          {{each explores.other v}}
+          <div class="item2">
+            <p>{{v.num}}{{if v.extra}}<span>/{{v.extra}}</span>{{/if}}</p>
+            <p>{{v.lable}}</p>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+
+    </div>
+    <div class="box">
+      <div class="titles">
+        <img src="{{res_Path}}imgs/other/star.png">
+        <span>我的代理人</span>
+      </div>
+      <div class="avatars">
+        {{each avatars v}}
+        <div class="avatar-box">
+          <div class="avatar rarity{{v.rarity}}">
+            <img class="avatar-img" src="{{pluResPath}}{{v.icon}}" />
+            {{if v.rank>0}}<div class="avatar-rank">{{v.rank}}</div>{{/if}}
+            <div class="avatar-rarity img{{v.rarity}}"></div>
+            <div class="avatar-banner">Lv.{{v.level}} </div>
+            <div class="avatar-element {{v.element}}"></div>
+            <div class="avatar-profession {{v.weaponType}}"></div>
+            <img class="avatar-group" src="{{v.group_icon_path}}">
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      <div class="titles">
+        <img src="{{res_Path}}imgs/other/star.png">
+        <span>我的邦布</span>
+      </div>
+      <div class="avatars">
+        {{each buddys v}}
+        <div class="avatar-box">
+          <div class="avatar rarity{{v.rarity}}">
+            <img class="avatar-img" src="{{pluResPath}}{{v.icon}}" />
+            {{if v.star>0}}<div class="avatar-rank">{{v.star}}</div>{{/if}}
+            <div class="avatar-rarity img{{v.rarity}}"></div>
+            <div class="avatar-banner">Lv.{{v.level}} </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+      <div class=" plugin">{{PluginName}}</div>
+    </div>
+  </div>
+</body>
+
+</html>

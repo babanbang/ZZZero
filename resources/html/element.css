@@ -1,0 +1,52 @@
+.avatar-profession,
+.avatar-element {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0, 0, 0, 0.581);
+  border-radius: 50%;
+}
+
+.fire {
+  background-image: url('../imgs/element/fire.png');
+}
+
+.ice {
+  background-image: url('../imgs/element/ice.png');
+}
+
+.elec {
+  background-image: url('../imgs/element/elec.png');
+}
+
+.phy {
+  background-image: url('../imgs/element/phy.png');
+}
+
+.ether {
+  background-image: url('../imgs/element/ether.png');
+}
+
+.支援,
+.support {
+  background-image: url('../imgs/profession/support.png');
+}
+
+.强攻,
+.attack {
+  background-image: url('../imgs/profession/attack.png');
+}
+
+.击破,
+.breakthrough {
+  background-image: url('../imgs/profession/breakthrough.png');
+}
+
+.异常,
+.anomaly {
+  background-image: url('../imgs/profession/anomaly.png');
+}
+
+.防护,
+.defensive {
+  background-image: url('../imgs/profession/defensive.png');
+}

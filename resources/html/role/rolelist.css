@@ -1,0 +1,518 @@
+body {
+  width: 700px;
+  padding-bottom: 20px;
+}
+
+.container {
+  padding: 0;
+  width: 100%;
+  position: relative;
+  color: rgb(255, 255, 255);
+  background-color: rgb(64, 64, 64);
+  padding-bottom: 30px;
+}
+
+.top {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(252, 252, 252, 0.8);
+}
+
+.line-avatars {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(252, 252, 252, 0.8);
+  margin: 5px 0px 5px;
+}
+
+.line-talents {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(252, 252, 252, 0.8);
+  position: absolute;
+  bottom: 25px;
+  right: 0;
+}
+
+.logo {
+  width: 150px;
+  height: 60px;
+  background-image: url('../../imgs/other/logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 5px;
+}
+
+.role {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.role-image {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  margin-left: 20px;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid white;
+}
+
+.role-text {
+  margin-left: 10px;
+}
+
+.role-text p {
+  margin: 5px 0;
+}
+
+.role-text span {
+  font-size: 10px;
+  background-color: rgb(234, 182, 26);
+  padding: 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.role-text span1 {
+  font-size: 10px;
+  background-color: rgb(26, 182, 234);
+  padding: 3px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+.left {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.avatars {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(39, 38, 36, 0.8);
+  padding: 18px;
+  font-size: 10px;
+}
+
+.avatars>* {
+  margin: 8px 7px;
+}
+
+.avatar-box {
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.275);
+  border-radius: 5px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 150px;
+  height: 185px;
+}
+
+.avatar-info {
+  width: 152px;
+  height: 108px;
+  background-image: url('../../imgs/other/base-info-border-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.avatar-info .avatar-image {
+  width: 135px;
+  height: 69px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin-top: 7px;
+  margin-left: 7px;
+}
+
+.rarityS::before {
+  content: '';
+  width: 135px;
+  height: 69px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  background: -webkit-linear-gradient(45deg, #c59a65, #894f4a);
+  background: linear-gradient(45deg, #c59a65, #894f4a);
+  border-radius: 5px;
+}
+
+.rarityA::before {
+  content: '';
+  width: 135px;
+  height: 69px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  background: -webkit-linear-gradient(45deg, #7f54c0, #3d3d63);
+  background: linear-gradient(45deg, #7f54c0, #3d3d63);
+  border-radius: 5px;
+}
+
+.avatar-rarity {
+  position: absolute;
+  bottom: 15px;
+  left: 5px;
+  z-index: 102;
+  width: 10px;
+  height: 10px;
+  background-size: contain;
+}
+
+.imgS {
+  background-image: url('../../imgs/other/rarity-s.png');
+}
+
+.imgA {
+  background-image: url('../../imgs/other/rarity-a.png');
+}
+
+.avatar-name {
+  position: absolute;
+  bottom: 16px;
+  left: 15px;
+  z-index: 102;
+  font-size: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-level {
+  background-color: rgb(124, 133, 136);
+  border-radius: 2px;
+  margin-left: 2px;
+  padding: 1px;
+  font-size: 4px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 1px;
+}
+
+.avatar-element {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  bottom: 14px;
+  right: 50px;
+}
+
+.avatar-profession {
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  bottom: 14px;
+  right: 40px;
+}
+
+.avatar-group {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  bottom: 17px;
+  right: 12px;
+}
+
+.avatar-ranks {
+  display: flex;
+  position: absolute;
+  bottom: 6px;
+  left: 5px;
+}
+
+.avatar-rank {
+  margin-left: 1px;
+  width: 7px;
+  height: 7px;
+  font-size: 5px;
+  text-align: center;
+  border-radius: 50%;
+  color: rgba(243, 236, 236, 0.523);
+  border: rgba(243, 236, 236, 0.523) 1px solid;
+}
+
+.unlocked {
+  color: rgb(255, 232, 54);
+  border: rgba(255, 232, 54) 1px solid;
+}
+
+.weapon-info {
+  width: 150px;
+  height: 80px;
+  background-image: url('../../imgs/other/extra-info-bg.png');
+  background-position: top;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 5px;
+}
+
+.skills {
+  padding: 3px;
+  width: 66px;
+  height: 40px;
+  float: left;
+  position: absolute;
+  top: 15px;
+  background-color: rgba(108, 84, 11, 0.098);
+  border-radius: 5px;
+}
+
+.skill {
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  width: 16px;
+  height: 16px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.skill-level {
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  font-size: 5px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.skill.type0 {
+  background-image: url('../../imgs/skills/0.png');
+}
+
+.skill.type1 {
+  background-image: url('../../imgs/skills/1.png');
+}
+
+.skill.type2 {
+  background-image: url('../../imgs/skills/2.png');
+}
+
+.skill.type3 {
+  background-image: url('../../imgs/skills/3.png');
+}
+
+.skill.type6 {
+  background-image: url('../../imgs/skills/6.png');
+}
+
+.skill.type5 {
+  background-image: url('../../imgs/skills/5.png');
+}
+
+
+.weapon-main {
+  background-image: url('../../imgs/other/equipment-main-content-bg.png');
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  background-size: cover;
+  width: 88px;
+  height: 82px;
+}
+
+.weapon-no {
+  background-image: url('../../imgs/other/equip-disable.png');
+}
+
+.weapon-main .weapon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 29px;
+  height: 29px;
+  position: absolute;
+  top: 24px;
+  left: 30px;
+}
+
+.weapon-stars {
+  display: flex;
+  width: 100%;
+  position: absolute;
+  bottom: 6px;
+  left: 4px;
+}
+
+.weapon-stars>* {
+  margin-left: -1.5px;
+}
+
+.weapon-star {
+  width: 6px;
+  height: 6px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
+  opacity: 0.35;
+}
+
+.weapon-star-full {
+  width: 6px;
+  height: 6px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
+}
+
+.weapon-level {
+  width: 26px;
+  height: 7px;
+  font-size: 4px;
+  position: absolute;
+  bottom: 0px;
+  left: 1.5px;
+}
+
+.weapon-level span {
+  position: relative;
+  top: 1px;
+  left: 8px;
+}
+
+.weaponS::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../imgs/other/weapon-bg-S.png');
+  background-size: cover;
+}
+
+.weaponA::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../imgs/other/weapon-bg-A.png');
+  background-size: contain;
+}
+
+.weaponB::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../imgs/other/weapon-bg-B.png');
+  background-size: cover;
+}
+
+.equip {
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.equip::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.equip-rarityS::before {
+  background-image: url('../../imgs/other/equip-bg-S.png');
+}
+
+.equip-rarityA::before {
+  background-image: url('../../imgs/other/equip-bg-A.png');
+}
+
+.equip-rarityB::before {
+  background-image: url('../../imgs/other/equip-bg-B.png');
+}
+
+.equip-level {
+  font-size: 2px;
+  position: absolute;
+  bottom: 2px;
+  z-index: 2;
+}
+
+.equip img {
+  width: 14px;
+  height: 14px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 0;
+}
+
+.equip-type1 {
+  left: 18.5px;
+  top: 4.1px;
+}
+
+.equip-type2 {
+  top: 28.6px;
+  left: 7.3px;
+}
+
+.equip-type3 {
+  left: 18.5px;
+  top: 53px;
+}
+
+.equip-type4 {
+  top: 53px;
+  right: 18.5px;
+}
+
+.equip-type5 {
+  top: 28.6px;
+  right: 7px;
+}
+
+.equip-type6 {
+  right: 18.5px;
+  top: 4.5px;
+}

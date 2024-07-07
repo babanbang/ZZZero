@@ -8,9 +8,12 @@ const data = Data.readJSON('data.json', { Path: import.meta.url })
 const meta = Meta.create('zzz', 'char')
 
 const name = []
+const ids = []
 lodash.forEach(data, (ds) => {
   name.push(ds.name)
+  ids.push(ds.id)
 })
+meta.addData([{ id: 'allcharsids', data: ids }])
 meta.addData([{ id: 'allchars', name }])
 meta.addData(data)
 meta.addAlias(alias)
