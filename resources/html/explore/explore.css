@@ -348,6 +348,18 @@ body {
   z-index: 101;
 }
 
+.buddy-banner {
+  position: absolute;
+  top: 46px;
+  background: rgb(8, 8, 8, 0.75);
+  color: white;
+  font-size: 5px;
+  font-family: "tttgbnumber";
+  text-align: center;
+  width: 100%;
+  z-index: 101;
+}
+
 .avatar-element {
   width: 9px;
   height: 9px;
@@ -402,4 +414,34 @@ body {
   color: rgba(27, 26, 26, 0.798);
   text-align: center;
   font-weight: bold;
+}
+
+.buddy-stars {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 13px;
+  right: 0;
+  z-index: 101;
+}
+
+.buddy-stars>* {
+  margin-left: -3px;
+}
+
+.buddy-star {
+  width: 8px;
+  height: 8px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
+  opacity: 0.35;
+}
+
+.buddy-star-full {
+  width: 8px;
+  height: 8px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
 }

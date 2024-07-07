@@ -74,6 +74,6 @@ export default class Explore extends Base {
       ]
     }
 
-    return await this.renderImg(exploreInfo, { test: true })
+    return await this.renderImg(exploreInfo)
   }
 }

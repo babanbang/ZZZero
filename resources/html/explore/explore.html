@@ -74,9 +74,14 @@
         <div class="avatar-box">
           <div class="avatar rarity{{v.rarity}}">
             <img class="avatar-img" src="{{pluResPath}}{{v.icon}}" />
-            {{if v.star>0}}<div class="avatar-rank">{{v.star}}</div>{{/if}}
+            {{set stars = [1,2,3,4,5]}}
+            <div class="buddy-stars">
+              {{each stars star}}
+              <div class="buddy-star{{v.star>=star?'-full':''}}"></div>
+              {{/each}}
+            </div>
             <div class="avatar-rarity img{{v.rarity}}"></div>
-            <div class="avatar-banner">Lv.{{v.level}} </div>
+            <div class="buddy-banner">{{v.name}} | Lv.{{v.level}} </div>
           </div>
         </div>
         {{/each}}
