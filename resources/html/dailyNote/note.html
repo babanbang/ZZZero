@@ -20,15 +20,13 @@
       <img class="icon icon-树脂" src="{{pluResPath}}html/dailyNote/images/电池.png">
       <p>电量</p>
       <div class="num">
-        <strong style="color: {{if resinMaxTime}}#F39000{{else}}#71B755{{/if}};">
-          {{energy.progress.current}}
-        </strong>/{{energy.progress.max}}
+        <strong
+          style="color: {{if resinMaxTime}}#F39000{{else}}#71B755{{/if}};">{{energy.progress.current}}</strong>/{{energy.progress.max}}
       </div>
       <div class="status">
         {{if resinMaxTimeMb2}}
         <div class="status-title">预计恢复时间</div>
-        <div class="status-date">
-          {{resinMaxTimeMb2Day}}<span class="time"> {{resinMaxTimeMb2}}</span>
+        <div class="status-date">{{resinMaxTimeMb2Day}}<span class="time"> {{resinMaxTimeMb2}}</span>
         </div>
         {{else}}
         <div class="status-whole">已全部恢复</div>
