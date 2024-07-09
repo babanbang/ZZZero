@@ -1,100 +1,139 @@
+@font-face {
+  font-family: "HYWenHei-55W";
+  src: url("../../../../../../resources/fonts/HYWenHei-55W.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
 body {
-  width: 696px;
-  height: 394px;
+  font-size: 14px;
+  font-family: "HYWenHei-55W", serif;
+  width: 800px;
+  height: 377px;
+  -webkit-transform: scale(4);
+  transform: scale(4);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  background-image: url('./images/note-bg.png');
+  width: 800px;
+  height: 376px;
+  background-image: url('./images/bg.png');
   background-size: cover;
-  position: relative;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  color: #ffffff;
+  /*border: 5px solid #EEE5D7*/
 }
 
-.note-data {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 639px;
-  height: 281px;
-  background-image: url('./images/note-bg-1.png');
-  background-size: cover;
-  margin-top: 65px;
+.logo {
+  position: absolute;
+  height: 72px;
+  width: 72px;
+  left: 20px;
+  top: 1px
 }
 
 .header h1 {
   position: absolute;
   letter-spacing: 0.12em;
-  right: 120px;
-  top: 50px;
+  left: 120px;
+  top: 27px;
   font-size: 25px;
-  color: rgb(214, 181, 60);
+  color: #F56C6C
 }
 
 .header h1 span {
   font-size: 15px
 }
 
+.header p {
+  position: absolute;
+  right: 120px;
+  top: 40px;
+  font-size: 18px;
+  color: #A28B6C
+}
+
 .header .date {
   position: absolute;
   right: 120px;
-  top: 30px;
+  top: 20px;
   font-size: 13px;
   color: #F56C6C;
 }
 
-.energy {
+.logos {
   position: absolute;
+  width: 100px;
+  right: 20px;
+  top: 5px
+}
+
+.resin {
+  position: absolute;
+  /* background-color: #fef7ef; */
   border-radius: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
   width: 290px;
   height: 283px;
   padding: 20px;
-  left: 25px;
-  top: 100px
+  left: 20px;
+  top: 73px
 }
 
-.energy img {
+.resin img {
   position: absolute;
   width: 100px;
   height: 100px
 }
 
-.energy p {
+.resin p {
   position: absolute;
   font-size: 25px;
   font-weight: bold;
-  color: rgb(140, 143, 150);
+  color: #ffffff;
   left: 125px;
   top: 30px
 }
 
-.energy .num {
+.resin .num {
   position: absolute;
   font-size: 25px;
   left: 125px;
-  top: 65px;
-  font-weight: bold;
-  color: rgb(140, 143, 150);
+  top: 65px
 }
 
-.energy .num strong {
+.resin .num strong {
   font-size: 45px
 }
 
 
-.energy .status {
-  background-color: rgba(45, 43, 39, 0.612);
+.resin .status {
   position: absolute;
+  padding: 5px;
+  background-color: #21201fa5;
   border-radius: 30px;
   width: 250px;
-  height: 110px;
+  height: 135px;
+  /*left: 30px;*/
   top: 135px
 }
 
-.energy .status .status-title {
+.resin .status .status-title {
   font-weight: bold;
   font-size: 15px;
   margin-bottom: 10px;
@@ -104,13 +143,12 @@ body {
   -ms-flex: none;
   flex: none;
   margin-top: 20px;
-  color: rgb(140, 143, 150);
 }
 
-.energy .status .status-date {
+.resin .status .status-date {
   font-weight: bold;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   margin-top: 15px;
   text-align: center;
   -webkit-box-flex: 0;
@@ -120,7 +158,7 @@ body {
   color: #F39000;
 }
 
-.energy .status .status-reserve {
+.resin .status .status-reserve {
   font-weight: bold;
   font-size: 16px;
   margin-top: 10px;
@@ -133,7 +171,7 @@ body {
 }
 
 
-.energy .status .time {
+.resin .status .time {
   display: inline-block;
   padding: 10px 10px;
   line-height: 20px;
@@ -142,11 +180,11 @@ body {
   margin: 0 10px;
   text-align: center;
   border-radius: 30px;
-  background: rgb(169, 131, 79);
+  background: #a9834f;
   color: #EEE5D7;
 }
 
-.energy .status .status-whole {
+.resin .status .status-whole {
   font-weight: bold;
   font-size: 25px;
   text-align: center;
@@ -158,25 +196,17 @@ body {
   margin-top: 36px;
 }
 
-.states {
+.list {
   position: absolute;
   border-radius: 20px;
   background-size: 100%;
   background-repeat: no-repeat;
-  width: 320px;
-  height: 250px;
-  left: 311px;
-  top: 100px;
-  font-size: 16px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  width: 447px;
+  height: 283px;
+  left: 331px;
+  top: 73px;
+  padding: 26px 20px 0px;
+  font-size: 25px
 }
 
 .item {
@@ -192,30 +222,133 @@ body {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #4A5366;
   position: relative;
-  font-weight: bold;
 }
+
+.item p1 {
+  font-size: 12px;
+  position: absolute;
+  left: 70px;
+  top: 60px
+}
+
+.item p {
+  font-size: 12px;
+  position: absolute;
+  left: 70px;
+  top: 130px
+}
+
+.item img {
+  width: 40px;
+  height: 40px
+}
+
+/* .item .icon-完成 {
+  background-image: url('./images/yes.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+  opacity: 0.7;
+  right: 15px;
+  width: 48px;
+  height: 48px
+} */
 
 .img-line {
   position: relative;
   background-image: url('./images/line.png');
   background-size: 100%;
   background-repeat: no-repeat;
-  margin: 20px 0;
-  width: 100%;
-  height: 10px;
+  margin: 23px 0px;
+  width: 407px;
+  height: 10px
 }
 
 .item .title {
-  color: rgb(140, 143, 150);
   margin-left: 10px;
+  font-weight: bold;
 }
 
 .item .title span {
   position: absolute;
   z-index: 2;
   right: 10px;
+  top: 5px;
+  font-weight: normal;
+}
+
+.role {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: absolute;
+  background-color: #F7EFE2;
+  width: 380px;
+  height: 46px;
+  left: 33.5px;
+  bottom: 13px;
+  border-radius: 30px;
+}
+
+/* .role .icon-star1 {
+  position: absolute;
+  background-image: url('./images/日间/star.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  left: 25px;
+  top: 14.5px
+}
+
+.role .icon-star2 {
+  position: absolute;
+  background-image: url('./images/日间/star.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 17px;
+  right: 25px;
+  top: 14.5px
+} */
+
+.role p {
+  position: relative;
+  color: #A28B6C;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.role .avatar {
+  position: relative;
+  margin: 5px -38px 5px 60px
+}
+
+.role .avatar .status {
+  width: 35px;
+  height: 35px
+}
+
+.role .avatar .icon {
+  position: absolute;
+  top: -10px;
+  left: -5px;
+  width: 40px;
+  height: 40px
+}
+
+.role .avatar .ok {
+  position: absolute;
   top: 18px;
-  color: rgb(229, 230, 231);
+  left: 22px;
+  width: 18px;
+  height: 18px
 }

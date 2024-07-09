@@ -1,54 +1,63 @@
-{{extend defaultLayout}}
+<!DOCTYPE html>
+<html>
 
-{{block 'css'}}
-<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/dailyNote/note.css" />
-{{/block}}
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <link rel="shortcut icon" href="#" />
+  <title>体力</title>
+  <link rel="stylesheet" type="text/css" href="{{pluResPath}}html/dailyNote/note.css" />
+</head>
 
-{{block 'main'}}
-<div class="header">
-  <h1>UID: {{uid}}</h1>
-  <p class="date">{{dayMb2}}</p>
-</div>
-<div class="note-data">
-  <div class="energy">
-    <img class="icon-energy" src="{{pluResPath}}html/dailyNote/images/energy.png">
-    <p>电量</p>
-    <div class="num">
-      <strong style="color: {{if resinMaxTime}}#F39000{{else}}#71B755{{/if}};">
-        {{energy.progress.current}}
-      </strong>/{{energy.progress.max}}
+<body>
+  <div class="container" id="container">
+    <div class="header">
+      <img class="logo" src="{{pluResPath}}html/dailyNote/images/left.png">
+      <h1>UID: {{uid}}</h1>
+      <p class="date">{{dayMb2}}</p>
+      <img class="logos" src="{{pluResPath}}html/dailyNote/images/right.png">
     </div>
-    <div class="status">
-      {{if resinMaxTimeMb2}}
-      <div class="status-title">预计恢复时间</div>
-      <div class="status-date">
-        {{resinMaxTimeMb2Day}}
-        <span class="time"> {{resinMaxTimeMb2}}</span>
+    <div class="resin">
+      <img class="icon icon-树脂" src="{{pluResPath}}html/dailyNote/images/电池.png">
+      <p>电量</p>
+      <div class="num">
+        <strong style="color: {{if resinMaxTime}}#F39000{{else}}#71B755{{/if}};">
+          {{energy.progress.current}}
+        </strong>/{{energy.progress.max}}
       </div>
-      {{else}}
-      <div class="status-whole">已全部恢复</div>
-      {{/if}}
+      <div class="status">
+        {{if resinMaxTimeMb2}}
+        <div class="status-title">预计恢复时间</div>
+        <div class="status-date">
+          {{resinMaxTimeMb2Day}}<span class="time"> {{resinMaxTimeMb2}}</span>
+        </div>
+        {{else}}
+        <div class="status-whole">已全部恢复</div>
+        {{/if}}
+      </div>
+    </div>
+    <div class="list">
+      <div class="item">
+        <img class="icon icon-活跃度" src="{{pluResPath}}html/dailyNote/images/活跃度.png">
+        <div class="title">活跃度<span {{if vitality.current !=vitality.max}} style="color: #ef4136"
+            {{/if}}>{{vitality.current}}<span1 style="font-size:16px"> /{{vitality.max}}</span1>
+          </span></div>
+      </div>
+      <div class="img-line"></div>
+      <div class="item">
+        <img class="icon icon-刮刮卡" src="{{pluResPath}}html/dailyNote/images/刮刮卡.png">
+        <div class="title">
+          刮刮卡<span>{{card_sign}}</span>
+        </div>
+      </div>
+      <div class="img-line"></div>
+      <div class="item">
+        <img class="icon icon-录像店" src="{{pluResPath}}html/dailyNote/images/录像店.png">
+        <div class="title">
+          录像店<span>{{sale_state}}</span>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="states">
-    <div class="item">
-      <div class="title">
-        今日活跃度
-        <span>{{vitality.current}}<span1 style="font-size:16px"> /{{vitality.max}}</span1></span>
-      </div>
-    </div>
-    <div class="img-line"></div>
-    <div class="item">
-      <div class="title">
-        刮刮卡<span>{{card_sign}}</span>
-      </div>
-    </div>
-    <div class="img-line"></div>
-    <div class="item">
-      <div class="title">
-        录像店经营<span>{{sale_state}}</span>
-      </div>
-    </div>
-  </div>
-</div>
-{{/block}}
+</body>
+
+</html>
