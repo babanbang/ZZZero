@@ -28,6 +28,11 @@ ApiTool.setApiMap('zzz', function (data) {
       url: `${MysTool.record_api}event/game_record_zzz/api/zzz/note`,
       query: `role_id=${this.uid}&server=${this.server}`
     },
+    /** 电量（小组件） */
+    widget: {
+      url: `${MysTool.record_api}event/game_record_zzz/api/zzz/widget`,
+      HeaderType: 'Action'
+    },
   }
 }, 'mys')
 

@@ -12,9 +12,14 @@
   <div class="container" id="container">
     <div class="header">
       <img class="logo" src="{{pluResPath}}html/dailyNote/images/left.png">
+      <img class="logos" src="{{pluResPath}}html/dailyNote/images/right.png">
       <h1>UID: {{uid}}</h1>
       <p class="date">{{dayMb2}}</p>
-      <img class="logos" src="{{pluResPath}}html/dailyNote/images/right.png">
+      {{if has_signed}}
+      <p style="color: {{if has_signed==1}}#DE4848{{/if}}">
+        今日签到福利{{if has_signed!=1}}已{{else}}尚未{{/if}}领取
+      </p>
+      {{/if}}
     </div>
     <div class="resin">
       <img class="icon icon-树脂" src="{{pluResPath}}html/dailyNote/images/电池.png">

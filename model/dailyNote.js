@@ -60,13 +60,13 @@ export default class DailyNote extends Base {
       const mys = user.getUidData({ game: this.game, uid })
       mysInfo.setMysApi(mys)
 
-      // if (mys.sk && !mysInfo.hoyolab) {
-      //   const noteData = await this.getWidgetData(mysInfo)
-      //   if (noteData?.retcode == 0) {
-      //     ImgList.push(await this.renderImg({ uid, ...this.dealData(noteData.data) }))
-      //     continue
-      //   }
-      // }
+      if (mys.sk && !mysInfo.hoyolab) {
+        const noteData = await this.getWidgetData(mysInfo)
+        if (noteData?.retcode == 0) {
+          ImgList.push(await this.renderImg({ uid, ...this.dealData(noteData.data) }))
+          continue
+        }
+      }
 
       if (mys.ck) {
         const noteData = await mysInfo.getData('dailyNote')
@@ -165,8 +165,9 @@ export default class DailyNote extends Base {
       ImgData.resinMaxTime = resinMaxTime
     }
 
-    ImgData.sale_state = /Doing/.test(data.vhs_sale.sale_state) ? '正在营业' : '未营业'
+    ImgData.sale_state = /Doing/.test(data.vhs_sale.sale_state) ? '正在营业' : '等待营业'
     ImgData.card_sign = /Done/.test(data.card_sign) ? '已完成' : '未完成'
+    if ('has_signed' in data) ImgData.has_signed = data.has_signed ? 2 : 1
 
     return {
       ...data,
