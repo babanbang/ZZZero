@@ -6,13 +6,13 @@
 {{/block}}
 
 {{block 'main'}}
-{{set demo = avatars[0]?.name || "雷神" }}
+{{set demo = avatars[0]?.name || "艾莲" }}
 <div class="profile-cont">
   <div class="head-box">
-    <div class="title">#面板列表
+    <div class="title">#绝区零面板列表
       <div class="label">UID:{{uid}}</div>
     </div>
-    <div class="label">你可以使用<span>#gs{{demo}}面板</span>命令来查看面板信息了
+    <div class="label">你可以使用<span>#zzz{{demo}}面板</span>命令来查看面板信息了
     </div>
   </div>
   <div class="cont">
@@ -28,7 +28,7 @@
     </div>
     <div class="cont-footer">
       {{if hasNew}}
-      <span class="new-tip">本次更新角色</span>
+      <span class="new-tip">本次更新代理人</span>
       {{else}}
       <span>{{if updateTime }} 更新时间：{{updateTime}} {{/if}}</span>
       {{/if}}
