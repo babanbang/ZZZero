@@ -264,10 +264,10 @@ body {
 .avatar_base_level {
   position: absolute;
   top: 170px;
-  left: 70px;
+  left: 80px;
   display: flex;
   align-items: center;
-  width: 185px;
+  width: 175px;
   height: 45px;
   background-image: url('./images/level-bg.png');
   background-size: contain;
@@ -284,10 +284,10 @@ body {
 .avatar_base_element {
   position: absolute;
   top: 170px;
-  right: 15px;
+  right: 25px;
   display: flex;
   align-items: center;
-  width: 185px;
+  width: 175px;
   height: 45px;
   background-image: url('./images/element-bg.png');
   background-size: contain;

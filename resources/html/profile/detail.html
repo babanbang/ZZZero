@@ -31,13 +31,11 @@
         {{set trees = ['A', 'B', 'AB', 'C', 'D', 'CD', 'E', 'F', 'EF']}}
         <div class="avatar_base_talentTree">
           {{each trees t idx}}
-          {{if avatar.talentTree>=idx&&t.length!=2}}
-          <div class="talentTree {{t}}">
+          <div class="talentTree {{((avatar.talentTree>=idx&&t.length!=2)||t.length==2)?`${t}`:''}}">
             {{if avatar.talentTree>=idx&&t.length==2}}
             <div class="TreeActive-long"></div>
             {{/if}}
           </div>
-          {{/if}}
           {{/each}}
           <div class="talentTree-right" style="background-color: var(--{{avatar.element}});"></div>
         </div>

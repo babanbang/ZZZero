@@ -196,7 +196,8 @@ export default class Profile extends Base {
       return data.map(d => this.setPropertie(d))
     }
     return {
-      name: data.property_name.replace(/^基础/, ''),
+      // name: data.property_name.replace(/^基础/, ''),
+      name: data.property_name,
       value: data.base
     }
   }
