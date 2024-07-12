@@ -74,14 +74,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 2px;
   position: relative;
   z-index: 0;
 }
 
 .rank .active {
-  width: 37px;
-  height: 37px;
+  width: 38px;
+  height: 38px;
   top: 4px;
   left: 3px;
   --fire: rgb(248, 90, 50);
