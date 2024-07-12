@@ -31,3 +31,4 @@ git clone --depth=1 https://gitee.com/bbaban/ZZZero.git ./lib/components/ZZZero
 - [x] 祈愿记录更新、查询
 - [x] 探索查询
 - [x] 角色列表查询
+- [x] 角色面板更新、查询

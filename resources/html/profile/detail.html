@@ -1,0 +1,198 @@
+{{extend defaultLayout}}
+
+{{block 'css'}}
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/element.css" />
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/profile/detail.css" />
+{{/block}}
+
+{{block 'main'}}
+{{set list = [1,2,3,4,5,6] }}
+<div class="avatar_info">
+  <div class="uid">UID：{{uid}}</div>
+  <div class="avatar_img" style="background-image: url({{pluResPath}}{{avatar.imgs?.splash}})"></div>
+  <div class="avatar_detail">
+    <div class="avatar_rank">
+      {{each list idx}}
+      <div class="rank">
+        {{idx}}
+        {{if avatar.rank>=idx}}
+        <div class="active" style="border: 5px solid var(--{{avatar.element}});"></div>
+        {{/if}}
+      </div>
+      {{/each}}
+    </div>
+    <div class="avatar_detail_info">
+      <div class="avatar_base">
+        <div class="avatar_base_group">
+          <img src="{{pluResPath}}imgs/groups/{{avatar.camp_name}}.png">{{avatar.camp_name}}
+        </div>
+        <div class="avatar_base_name">{{avatar.abbr||avatar.name}}</div>
+        <img class="avatar_base_star" src="{{pluResPath}}imgs/other/rarity-{{avatar.star}}.png" />
+        {{set trees = ['A', 'B', 'AB', 'C', 'D', 'CD', 'E', 'F', 'EF']}}
+        <div class="avatar_base_talentTree">
+          {{each trees t idx}}
+          {{if avatar.talentTree>=idx&&t.length!=2}}
+          <div class="talentTree {{t}}">
+            {{if avatar.talentTree>=idx&&t.length==2}}
+            <div class="TreeActive-long"></div>
+            {{/if}}
+          </div>
+          {{/if}}
+          {{/each}}
+          <div class="talentTree-right" style="background-color: var(--{{avatar.element}});"></div>
+        </div>
+      </div>
+      <div class="avatar_base_level">
+        等级<p>{{avatar.level}}</p>
+      </div>
+      <div class="avatar_base_element">
+        <span class="avatar-element {{avatar.element}}"></span>
+        <div class="avatar_base_profession">
+          <span class="avatar-profession {{avatar.weaponType}}"></span>
+          {{avatar.weaponType}}
+        </div>
+      </div>
+      <div class="avatar_base_attrs">
+        {{each avatar.attr attr}}
+        <div class="avatar_base_attr">
+          {{attr.name}}<p>{{attr.value}}</p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="weapon-skills">
+  <div class="skills">
+    {{each avatar.skills skill}}
+    <div class="skill">
+      <img class="skill-img" src="{{pluResPath}}imgs/skills/{{skill.id}}.png" />
+      <p>{{skill.level}}<strong>{{skill.max}}</strong></p>
+    </div>
+    {{/each}}
+  </div>
+  {{if avatar.weapon}}
+  {{set weapon = avatar.weapon}}
+  <div class="weapon">
+    <div class="weapon-info">
+      <img class="weapon-img" src="{{weapon.icon||`${pluResPath}${weapon.image}`}}" />
+      <div class="weapon-rarity-name">
+        <img class="weapon-rarity" src="{{pluResPath}}html/profile/images/artis-{{weapon.rarity}}.png" />
+        {{weapon.name}}
+      </div>
+      <div class="weapon-level-star">
+        <div class="weapon-level">Lv.{{weapon.level}}</div>
+        {{set stars = [1,2,3,4,5]}}
+        <div class="weapon-stars">
+          {{each stars star}}
+          <div class="weapon-star{{avatar.weapon.star>=star?'-full':''}}"></div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="weapon-desc-type">[<span>{{weapon.professionName}}</span>]可触发以下效果»»»</div>
+      <div class="weapon-attr">
+        {{each weapon.attr attr}}
+        <p>{{attr.name}} +{{attr.value}}</p>
+        {{/each}}
+      </div>
+    </div>
+    <div class="weapon-desc">
+      <div class="weapon-desc-titie">{{weapon.desc_title}}：</div>
+      <div class="weapon-desc-content">{{@weapon.desc}}</div>
+    </div>
+  </div>
+  {{/if}}
+</div>
+
+{{if avatar.artis}}
+{{set artis = avatar.artis}}
+{{set name = {能量自动回复:'能量回复'} }}
+{{set artis_left = [1,2,3]}}
+{{set artis_right = [6,5,4]}}
+
+<div class="artis-list">
+  <div class="artis">
+    {{each artis_left idx}}
+    {{if artis[idx]}}
+    {{set a= artis[idx]}}
+    <div class="artis-item">
+      <!-- <div class="artis-idx">{{idx}}</div> -->
+      <div class="artis-name">
+        <img class="artis-rarity" src="{{pluResPath}}html/profile/images/artis-{{a.rarity}}.png" />
+        <span>{{a.name}}</span>
+      </div>
+      <div class="artis-level">等级：<span>{{a.level}}</span></div>
+      <div class="artis-attr-main">
+        {{name[a.main.name]||a.main.name}}:<span>{{a.main.value}}</span>
+      </div>
+      <div class="artis-attrs">
+        {{each a.attr attr}}
+        <div class="artis-attr-item">
+          {{name[attr.name]||attr.name}}:<span>{{attr.value}}</span>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{else}}
+    <div class="no-artis-item"></div>
+    {{/if}}
+    {{/each}}
+  </div>
+  <div class="artis-buff">
+    <div class="artis-roulette">
+      {{each list idx}}
+      {{ if !avatar.artis[idx]}}
+      <div class="equip equip-type{{idx}} weapon-no"></div>
+      {{else}}
+      {{set equip = avatar.artis[idx]}}
+      <div class="equip equip-type{{idx}} equip-rarity{{equip.rarity}}">
+        <img src="{{equip.icon}}">
+      </div>
+      {{/if}}
+      {{/each}}
+      <div class="equip equip-avatar">
+        <img src="{{pluResPath}}{{avatar.imgs?.face}}">
+      </div>
+    </div>
+    <div class="artis-buff-list">
+      <div class="artis-buff-title">套装效果</div>
+      {{each avatar.artisbuff buff n}}
+      {{if buff.active}}
+      <div class="artis-buff-name">{{n}}</div>
+      {{each buff.desc d}}
+      {{if d.active}} <p class="artis-buff-desc">{{@ d.desc}}</p>{{/if}}
+      {{/each}}
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="artis">
+    {{each artis_right idx}}
+    {{if artis[idx]}}
+    {{set a= artis[idx]}}
+    <div class="artis-item">
+      <!-- <div class="artis-idx" style="left: 5px;">{{idx}}</div> -->
+      <div class="artis-name">
+        <img class="artis-rarity" src="{{pluResPath}}html/profile/images/artis-{{a.rarity}}.png" />
+        <span>{{a.name}}</span>
+      </div>
+      <div class="artis-level">等级：{{a.level}}</div>
+      <div class="artis-attr-main">
+        {{name[a.main.name]||a.main.name}}:<span>{{a.main.value}}</span>
+      </div>
+      <div class="artis-attrs">
+        {{each a.attr attr}}
+        <div class="artis-attr-item">
+          {{name[attr.name]||attr.name}}:<span>{{attr.value}}</span>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    {{else}}
+    <div class="no-artis-item"></div>
+    {{/if}}
+    {{/each}}
+  </div>
+</div>
+{{/if}}
+{{/block}}

@@ -1,0 +1,816 @@
+body {
+  width: 750px;
+  font-family: 'zzz-font';
+}
+
+.container {
+  padding: 0;
+  padding-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  background-image: url('./images/bg.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  position: relative;
+}
+
+.uid {
+  position: absolute;
+  top: 20px;
+  left: 340px;
+  font-size: 22px;
+}
+
+.avatar_info {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+.avatar_img {
+  position: absolute;
+  top: 0;
+  left: -30px;
+  width: 360px;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.avatar_detail {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+
+.avatar_rank {
+  width: 60px;
+  height: 350px;
+  margin-top: auto;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  background-image: url('./images/rank-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.avatar_rank .rank {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 5px;
+  color: rgb(151, 153, 155);
+  font-size: 22px;
+  font-weight: bold;
+  background-image: url('./images/rank-item.png');
+  background-size: contain;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 2px;
+  position: relative;
+  z-index: 0;
+}
+
+.rank .active {
+  width: 37px;
+  height: 37px;
+  top: 4px;
+  left: 3px;
+  --fire: rgb(248, 90, 50);
+  --ice: rgb(0, 255, 255);
+  --elec: rgb(15, 162, 242);
+  --phy: rgb(216, 218, 218);
+  --ether: rgb(228, 52, 211);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.avatar_detail_info {
+  width: 415px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-image: url('./images/detail_info-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.avatar_detail_info>* {
+  margin-bottom: 5px;
+}
+
+.avatar_base {
+  height: 137px;
+  margin-top: 28px;
+  margin-left: 11px;
+  background-image: url('./images/detail_info_base.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.avatar_base_group {
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.avatar_base_group img {
+  width: 23px;
+  height: 23px;
+  margin-right: 4px;
+}
+
+.avatar_base_name {
+  position: absolute;
+  top: 45px;
+  left: 7px;
+  font-size: 28px;
+}
+
+.avatar_base_star {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.avatar_base_talentTree {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 260px;
+  height: 113px;
+}
+
+.avatar_base_talentTree::before {
+  position: absolute;
+  z-index: 3;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/talentTree.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.talentTree {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 3;
+}
+
+.talentTree.A {
+  top: 20px;
+  left: 29px;
+  background-image: url('./images/talent-A.png');
+}
+
+.talentTree.B {
+  bottom: 16px;
+  left: 15px;
+  background-image: url('./images/talent-B.png');
+}
+
+.talentTree.AB {
+  z-index: 5;
+  top: 5.2px;
+  left: 0;
+  width: 76px;
+  height: 105px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.talentTree.C {
+  top: 21px;
+  left: 93px;
+  background-image: url('./images/talent-C.png');
+}
+
+.talentTree.D {
+  bottom: 17px;
+  left: 78px;
+  background-image: url('./images/talent-D.png');
+}
+
+.talentTree.CD {
+  z-index: 5;
+  top: 5.2px;
+  left: 63px;
+  width: 76px;
+  height: 105px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.talentTree.E {
+  top: 21px;
+  left: 157px;
+  background-image: url('./images/talent-E.png');
+}
+
+.talentTree.F {
+  bottom: 17px;
+  left: 142px;
+  background-image: url('./images/talent-F.png');
+}
+
+.talentTree.EF {
+  z-index: 5;
+  top: 5.2px;
+  left: 126px;
+  width: 76px;
+  height: 105px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.talentTree-right {
+  --fire: rgb(248, 90, 50);
+  --ice: rgb(0, 255, 255);
+  --elec: rgb(15, 162, 242);
+  --phy: rgb(216, 218, 218);
+  --ether: rgb(228, 52, 211);
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  transform: rotate(16deg);
+  width: 45px;
+  height: 85px;
+  border-radius: 20px;
+}
+
+.TreeActive-long {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url('./images/Tree.png');
+}
+
+.avatar_base_level {
+  position: absolute;
+  top: 170px;
+  left: 70px;
+  display: flex;
+  align-items: center;
+  width: 185px;
+  height: 45px;
+  background-image: url('./images/level-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 20px;
+}
+
+.avatar_base_level p {
+  margin-left: auto;
+}
+
+.avatar_base_element {
+  position: absolute;
+  top: 170px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  width: 185px;
+  height: 45px;
+  background-image: url('./images/element-bg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.avatar-element {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.avatar_base_profession {
+  margin-left: auto;
+  width: 85px;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-profession {
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-right: 5px;
+}
+
+.avatar_base_attrs {
+  position: absolute;
+  bottom: 0;
+  float: left;
+  width: 410px;
+  font-size: 12px;
+}
+
+.avatar_base_attr {
+  width: 180px;
+  height: 22px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(43, 43, 43);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  margin: 3px 5px 10px 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.avatar_base_attr p {
+  margin-left: auto;
+}
+
+.weapon-skills {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.skill {
+  width: 65px;
+  height: 100%;
+  background-image: url('./images/skill-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
+.skill .skill-img {
+  position: absolute;
+  top: 11px;
+  left: 20px;
+  width: 35px;
+  height: 35px;
+}
+
+.skill p {
+  font-size: 8px;
+  position: absolute;
+  bottom: 15px;
+  left: 17px;
+  width: 26px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.skill p strong {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.701);
+}
+
+.weapon {
+  margin-top: -75px;
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.weapon-info {
+  width: 340px;
+  height: 100%;
+  background-color: rgb(34, 34, 34);
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 0 20px 0 20px;
+  position: relative;
+}
+
+.weapon-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 100px;
+  height: 100px;
+  background-image: url('./images/weapon-img-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.weapon-rarity-name {
+  margin: 5px 10px 5px auto;
+  height: 50px;
+  width: 200px;
+  background-image: url('./images/weapon-name-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.weapon-rarity-name .weapon-rarity {
+  width: 45px;
+  height: 45px;
+  margin-left: 3px;
+  margin-right: 5px;
+}
+
+.weapon-level-star {
+  margin-left: auto;
+  margin-bottom: 8px;
+  height: 33px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.weapon-level {
+  background-color: rgb(255, 146, 0);
+  border: 4px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 13px;
+}
+
+.weapon-stars {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 5px;
+}
+
+.weapon-star {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
+  opacity: 0.35;
+}
+
+.weapon-star-full {
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-image: url('../../imgs/other/star.png');
+}
+
+.weapon-desc-type {
+  font-size: 16px;
+  margin-left: auto;
+  width: 200px;
+}
+
+.weapon-desc-type span {
+  color: rgb(0, 255, 255);
+}
+
+.weapon-attr {
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  width: 300px;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(43, 43, 43);
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.weapon-attr p {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.weapon-desc {
+  margin-left: -4px;
+  margin-top: auto;
+  width: 410px;
+  height: 100px;
+  background-color: rgb(34, 34, 34);
+  border: 5px solid rgb(0, 0, 0);
+  border-radius: 0 60px 0 0;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 5px 0 10px;
+}
+
+.weapon-desc-titie {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.weapon-desc-content {
+  font-size: 12px;
+  color: rgba(207, 205, 205, 0.799);
+}
+
+.artis-list {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+}
+
+.artis-list>* {
+  margin-left: 13px;
+}
+
+.artis {
+  display: flex;
+  flex-direction: column;
+}
+
+.artis>* {
+  margin-bottom: 10px;
+}
+
+.artis-item {
+  width: 240px;
+  height: 160px;
+  background-color: rgb(34, 34, 34);
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.artis-item>* {
+  margin-bottom: 5px;
+}
+
+.no-artis-item {
+  width: 240px;
+  height: 160px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.artis-idx {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: rgba(255, 255, 255, 0.71);
+}
+
+.artis-name {
+  margin-top: 5px;
+  height: 30px;
+  background-color: rgb(34, 34, 34);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding-right: 8px;
+  font-size: 16px;
+}
+
+.artis-name span {
+  margin: auto;
+}
+
+.artis-rarity {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.artis-level {
+  background-color: rgb(34, 34, 34);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  width: 60px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.artis-level span {
+  margin-left: auto;
+  color: rgb(255, 146, 0);
+}
+
+.artis-attr-main {
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(43, 43, 43);
+  border-radius: 15px;
+  width: 200px;
+  height: 25px;
+  display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.artis-attr-main span {
+  margin-left: auto;
+}
+
+.artis-attrs {
+  float: left;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+}
+
+.artis-attr-item {
+  width: 115px;
+  height: 25px;
+  background-color: rgb(0, 0, 0);
+  border: 2px solid rgb(43, 43, 43);
+  border-radius: 15px;
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 1.5px;
+  margin-bottom: 5px;
+}
+
+.artis-attr-item span {
+  margin-left: auto;
+}
+
+.artis-buff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.artis-roulette {
+  width: 220px;
+  height: 220px;
+  background-image: url('./images/roulette.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 15px;
+  position: relative;
+}
+
+.equip {
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.equip::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.equip-rarityS::before {
+  background-image: url('../../imgs/other/equip-bg-S.png');
+}
+
+.equip-rarityA::before {
+  background-image: url('../../imgs/other/equip-bg-A.png');
+}
+
+.equip-rarityB::before {
+  background-image: url('../../imgs/other/equip-bg-B.png');
+}
+
+.equip-level {
+  font-size: 2px;
+  position: absolute;
+  bottom: 2px;
+  z-index: 2;
+}
+
+.equip img {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  z-index: 0;
+}
+
+.equip-avatar {
+  width: 60px;
+  height: 60px;
+  top: 68px;
+  left: 80px;
+}
+
+.equip-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.equip-type1 {
+  left: 48px;
+  top: 17.7px;
+}
+
+.equip-type2 {
+  top: 74.6px;
+  left: 21.3px;
+}
+
+.equip-type3 {
+  left: 48px;
+  top: 133px;
+}
+
+.equip-type4 {
+  top: 133px;
+  right: 48px;
+}
+
+.equip-type5 {
+  top: 74.6px;
+  right: 21.3px;
+}
+
+.equip-type6 {
+  right: 48px;
+  top: 17.7px;
+}
+
+.weapon-no {
+  background-image: url('../../imgs/other/equip-disable.png');
+}
+
+.artis-buff-list {
+  width: 220px;
+  height: 250px;
+  background-image: url('./images/artis-buff-bg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.artis-buff-title {
+  width: 80px;
+  margin: 6px auto 15px auto;
+}
+
+.artis-buff-name {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: aquamarine;
+}
+
+.artis-buff-desc {
+  margin-bottom: 3px;
+  font-size: 10px;
+  color: rgba(207, 205, 205, 0.799);
+}

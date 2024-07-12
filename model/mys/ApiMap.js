@@ -10,7 +10,7 @@ ApiTool.setApiMap('zzz', function (data) {
     /** 角色详情 */
     avatar_info: {
       url: `${MysTool.record_api}event/game_record_zzz/api/zzz/avatar/info`,
-      query: `id_list[]=${data.id_list?.join?.('&id_list[]=') || ''}&need_wiki=true&role_id=${this.uid}&server=${this.server}`
+      query: `id_list[]=${data.id_list?.join?.('&id_list[]=') || ''}&need_wiki=false&role_id=${this.uid}&server=${this.server}`
     },
     /** 邦布 */
     buddy: {
@@ -46,7 +46,7 @@ ApiTool.setApiMap('zzz', function (data) {
     /** 角色详情 */
     avatar_info: {
       url: `${MysTool.os_act_nap_api}event/game_record_zzz/api/zzz/avatar/info`,
-      query: `id_list[]=${data.id_list}&need_wiki=true&role_id=${this.uid}&server=${this.server}`
+      query: `id_list[]=${data.id_list}&need_wiki=false&role_id=${this.uid}&server=${this.server}`
     },
     /** 邦布 */
     buddy: {

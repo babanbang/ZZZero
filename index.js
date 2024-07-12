@@ -10,7 +10,7 @@ Cfg.initCfg('/lib/components', 'zzz')
 logger.info(`${PluginName}-${dir.name}初始化~`)
 
 /** 初始化数据目录 */
-for (const path of ['LedgerData', 'GachaData', 'PlayerData']) {
+for (const path of ['LedgerData', 'GachaData', 'PlayerData', 'MysPlayerData']) {
   Data.createDir(`${dir.name}/${path}/`, { root: true })
 }
 

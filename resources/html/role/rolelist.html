@@ -25,14 +25,14 @@
     <div class="avatar-box">
       <div class="avatar-info rarity{{avatar.rarity}}">
         <div class="avatar-image" style="background-image: url('{{pluResPath}}{{avatar.vertical}}')"></div>
-        <div class="avatar-rarity img{{avatar.rarity}}"></div>
+        <div class="avatar-rarity"style="background-image: url('{{pluResPath}}imgs/other/rarity-{{avatar.rarity}}.png')"></div>
         <div class="avatar-name">
           {{avatar.name||avatar.full_name_mi18n}}
           <div class="avatar-level">Lv.{{avatar.level}}</div>
         </div>
         <div class="avatar-element {{avatar.element}}"></div>
         <div class="avatar-profession {{avatar.weaponType}}"></div>
-        <img class="avatar-group" src="{{avatar.group_icon_path}}">
+        <img class="avatar-group" src="{{pluResPath}}imgs/groups/{{avatar.camp_name_mi18n}}.png">
         <div class="avatar-ranks">
           {{each avatar.ranks rank}}
           <div class="avatar-rank {{rank.is_unlocked?'unlocked':''}}">{{rank.id}}</div>

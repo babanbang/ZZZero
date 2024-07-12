@@ -199,14 +199,6 @@ body {
   background-size: contain;
 }
 
-.imgS {
-  background-image: url('../../imgs/other/rarity-s.png');
-}
-
-.imgA {
-  background-image: url('../../imgs/other/rarity-a.png');
-}
-
 .avatar-name {
   position: absolute;
   bottom: 16px;

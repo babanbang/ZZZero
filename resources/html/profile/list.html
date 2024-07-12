@@ -1,0 +1,41 @@
+{{extend elemLayout}}
+
+{{block 'css'}}
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/profile/detail.css" />
+<link rel="stylesheet" type="text/css" href="{{pluResPath}}html/profile/list.css" />
+{{/block}}
+
+{{block 'main'}}
+{{set demo = avatars[0]?.name || "雷神" }}
+<div class="profile-cont">
+  <div class="head-box">
+    <div class="title">#面板列表
+      <div class="label">UID:{{uid}}</div>
+    </div>
+    <div class="label">你可以使用<span>#gs{{demo}}面板</span>命令来查看面板信息了
+    </div>
+  </div>
+  <div class="cont">
+    <div class="char-list">
+      {{each avatars char idx}}
+      <div class="char-item {{char.isNew ?'new-char':''}}">
+        <div class="item-icon char-icon star{{char.star}}">
+          <span class="img" style="background-image: url({{pluResPath}}{{char.face}})"></span>
+        </div>
+        <span class="name">{{char.abbr||char.name}}<span class="cons {{useBrowser}} cons-{{char.cons}}">{{char.cons}}</span></span>
+      </div>
+      {{/each}}
+    </div>
+    <div class="cont-footer">
+      {{if hasNew}}
+      <span class="new-tip">本次更新角色</span>
+      {{else}}
+      <span>{{if updateTime }} 更新时间：{{updateTime}} {{/if}}</span>
+      {{/if}}
+      <span class="serv">
+        当前更新服务：{{servName}}
+      </span>
+    </div>
+  </div>
+</div>
+{{/block}}
