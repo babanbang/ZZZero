@@ -113,8 +113,8 @@ export default class Profile extends Base {
         max: 12
       }
       if (skill.skill_type != 5) {
-        if (avatar.rank >= 5) max += 4
-        if (avatar.rank >= 3) max += 2
+        if (avatar.rank >= 5) item.max += 4
+        if (avatar.rank >= 3) item.max += 2
         avatar.skills[skill.skill_type] = item
       } else {
         avatar.talentTree = Number(skill.level) - 2 + Math.floor((Number(skill.level) - 1) / 2)
