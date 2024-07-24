@@ -39,6 +39,16 @@
     "talentId": {},
     "talentCons": {}
   },
+  "1042": {
+    "id": 1042,
+    "key": "ZhuYuan",
+    "name": "朱鸢",
+    "star": "S",
+    "elem": "以太",
+    "weapon": "强攻",
+    "talentId": {},
+    "talentCons": {}
+  },
   "1061": {
     "id": 1061,
     "key": "Corin",
