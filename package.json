@@ -1,0 +1,52 @@
+{
+  "name": "karin-plugin-mystool-zzzero",
+  "version": "0.0.0",
+  "author": "babanbang",
+  "type": "module",
+  "description": "karin plugin MysTool ZenlessZoneZero",
+  "homepage": "https://github.com/babanbang/ZZZero",
+  "bugs": {
+    "url": "https://github.com/babanbang/ZZZero/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babanbang/ZZZero.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
+    "pub": "npm publish --access public"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/lodash": "^4.17.7",
+    "@types/node": "^20.14.11",
+    "@types/node-schedule": "^2.1.7",
+    "@types/ws": "^8.5.11",
+    "eslint": "^9.7.0",
+    "neostandard": "^0.11.1",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.5.3"
+  },
+  "karin": {
+    "apps": [
+      "lib/apps"
+    ],
+    "outDir": "lib",
+    "rootDir": "src"
+  },
+  "files": [
+    "/lib/**/*.js",
+    "/lib/**/*.d.ts",
+    "/config/*.yaml",
+    "/config/*.js",
+    "resources",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
