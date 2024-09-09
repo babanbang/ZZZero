@@ -159,6 +159,36 @@
     "talentId": {},
     "talentCons": {}
   },
+  "1251": {
+    "id": 1251,
+    "key": "QingYi",
+    "name": "青衣",
+    "star": "S",
+    "elem": "电",
+    "weapon": "击破",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1261": {
+    "id": 1261,
+    "key": "Jane",
+    "name": "简·杜",
+    "star": "S",
+    "elem": "物理",
+    "weapon": "异常",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1271": {
+    "id": 1271,
+    "key": "Seth",
+    "name": "赛斯·洛威尔",
+    "star": "A",
+    "elem": "电",
+    "weapon": "防护",
+    "talentId": {},
+    "talentCons": {}
+  },
   "1281": {
     "id": 1281,
     "key": "Piper Wheel",
