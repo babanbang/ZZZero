@@ -59,6 +59,16 @@
     "talentId": {},
     "talentCons": {}
   },
+  "1071": {
+    "id": 1071,
+    "key": "Caesar",
+    "name": "凯撒·金",
+    "star": "S",
+    "elem": "物理",
+    "weapon": "防护",
+    "talentId": {},
+    "talentCons": {}
+  },
   "1081": {
     "id": 1081,
     "key": "Billy",
@@ -126,6 +136,16 @@
     "star": "A",
     "elem": "火",
     "weapon": "支援",
+    "talentId": {},
+    "talentCons": {}
+  },
+  "1171": {
+    "id": 1171,
+    "key": "Burnice",
+    "name": "柏妮思·怀特",
+    "star": "S",
+    "elem": "火",
+    "weapon": "异常",
     "talentId": {},
     "talentCons": {}
   },
