@@ -61,19 +61,21 @@ export default class Profile extends Base {
 
     const chars = []
     const profiles = Data.readJSON(`${Data.gamePath(this.game)}MysPlayerData/${uid}.json`, { root: true })
-    profiles.avatar_list.forEach(profile => {
-      const char = Character.get(profile.id, this.game)
-      if (char) {
-        const imgs = char.getImgs()
-        chars.push({
-          ...char.getData('id,name,abbr,elem,star'),
-          face: imgs.qFace || imgs.face,
-          level: profile.level || 1,
-          cons: profile.rank,
-          isNew: newChar?.[char.name]
-        })
-      }
-    })
+    if (profiles) {
+      profiles.avatar_list.forEach(profile => {
+        const char = Character.get(profile.id, this.game)
+        if (char) {
+          const imgs = char.getImgs()
+          chars.push({
+            ...char.getData('id,name,abbr,elem,star'),
+            face: imgs.qFace || imgs.face,
+            level: profile.level || 1,
+            cons: profile.rank,
+            isNew: newChar?.[char.name]
+          })
+        }
+      })
+    }
     if (lodash.isEmpty(chars)) {
       this.e._isReplyed || this.e.reply('请先更新角色面板数据~')
       return false

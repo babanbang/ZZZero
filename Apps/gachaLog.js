@@ -17,7 +17,7 @@ export const GachaLog_upLogBysk = karin.command(
   new RegExp(`^${reg}(更新|刷新)抽卡(记录|祈愿|分析)$`, 'i'),
   async (e) => {
     const msg = await new GachaLog(e).upLogBysk()
-    if (msg) e.bot.sendForwardMessage(e.contact, msg)
+    if (msg) e.bot.sendForwardMessage(e.contact, msg, e.message_id)
     return true
   },
   { name: '更新绝区零抽卡记录', priority: 200 }
@@ -41,7 +41,7 @@ export const gachaLog_hander = karin.handler(
   'mys.zzz.gachaLog',
   async ({ e, params }) => {
     const msg = await new GachaLog(e).upLog(params)
-    if (msg) e.bot.sendForwardMessage(e.contact, msg)
+    if (msg) e.bot.sendForwardMessage(e.contact, msg, e.message_id)
     return true
   },
   { priority: 200 }
